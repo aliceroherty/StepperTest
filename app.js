@@ -1,5 +1,5 @@
 //Importing onoff Module
-const Gpio = require('stepper/node_modules/onoff').Gpio;
+const Gpio = require('onoff').Gpio;
 
 
 //Setting Pin Numbers (gpio numbering)
