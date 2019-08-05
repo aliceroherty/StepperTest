@@ -3,20 +3,24 @@ const Gpio = require('onoff').Gpio;
 
 
 //Setting Pin Numbers (gpio numbering)
-
 const pinNums = [18, 23, 24, 25];
 
 
 //Initializing GPIO Pins
-
 const pin1 = new Gpio(pinNums[0], 'out');
 const pin2 = new Gpio(pinNums[1], 'out');
 const pin3 = new Gpio(pinNums[2], 'out');
 const pin4 = new Gpio(pinNums[3], 'out');
 
 
-//Single Phase
+//Setting pins low
+pin1.writeSync(0);
+pin2.writeSync(0);
+pin3.writeSync(0);
+pin4.writeSync(0);
 
+
+//Single Phase
 const singlePhase = [
     [1, 0, 0, 0],
     [0, 1, 0, 0],
@@ -26,7 +30,6 @@ const singlePhase = [
 
 
 //Full Stepping
-
 const dualPhase = [
     [1, 1, 0, 0],
     [0, 1, 1, 0],
@@ -36,7 +39,6 @@ const dualPhase = [
 
 
 //Half Stepping
-
 const halfStep = [
     [1, 0, 0, 0],
     [1, 1, 0, 0],
@@ -59,6 +61,7 @@ const single = (revs = 1) => {
             setTimeout(() => {
                 console.log('waiting...')
             }, 2500);           
+            clearTimeout();
         });
     }
 }
