@@ -64,7 +64,7 @@ const single = (revs = 1) => {
             pin2.writeSync(pinValues[1]);
             pin3.writeSync(pinValues[2]);
             pin4.writeSync(pinValues[3]);
-            delay(0.75);
+            delay(1);
         });
     }
 }
@@ -76,7 +76,7 @@ const full = (revs = 1) => {
             pin2.write(pinValues[1]);
             pin3.write(pinValues[2]);
             pin4.write(pinValues[3]);
-            delay(0.75);
+            delay(1);
         });
     }
 }
@@ -88,7 +88,7 @@ const half = (revs = 1) => {
             pin2.write(pinValues[1]);
             pin3.write(pinValues[2]);
             pin4.write(pinValues[3]);
-            delay(0.25);
+            delay(0.5);
         });
     }
 }
