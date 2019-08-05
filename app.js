@@ -76,6 +76,7 @@ const full = (revs = 1) => {
             pin2.write(pinValues[1]);
             pin3.write(pinValues[2]);
             pin4.write(pinValues[3]);
+            delay(3);
         });
     }
 }
@@ -87,22 +88,23 @@ const half = (revs = 1) => {
             pin2.write(pinValues[1]);
             pin3.write(pinValues[2]);
             pin4.write(pinValues[3]);
+            delay(3);
         });
     }
 }
 
+//One Revolution Each
 console.log('Single Phase...');
 single(512);
 
+console.log('Full Stepping / Dual Phase...');
+full(512);
+
+console.log('Half Stepping...');
+half(256);
+
+//Unexporting Pins
 pin1.unexport();
 pin2.unexport();
 pin3.unexport();
 pin4.unexport();
-
-/*
-console.log('Full Stepping / Dual Phase...');
-full(5);
-
-console.log('Half Stepping...');
-half(5);
-*/
