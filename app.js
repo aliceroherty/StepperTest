@@ -51,14 +51,14 @@ const halfStep = [
 //Functions to Drive the Stepper Motor
 const single = (revs = 1) => {
     for(i = 0; i < revs; i++) {
-        setTimeout(() => {
-            singlePhase.forEach((pinValues) => {
+        singlePhase.forEach((pinValues) => {
+            setTimeout(() => {
                 pin1.write(pinValues[0]);
                 pin2.write(pinValues[1]);
                 pin3.write(pinValues[2]);
                 pin4.write(pinValues[3]);
-            });
-        }, 250);
+            }, 250);           
+        });
     }
 }
 
