@@ -64,7 +64,7 @@ const single = (revs = 1) => {
             pin2.writeSync(pinValues[1]);
             pin3.writeSync(pinValues[2]);
             pin4.writeSync(pinValues[3]);
-            delay(1000);
+            delay(250);
         });
     }
 }
