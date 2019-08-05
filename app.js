@@ -64,7 +64,7 @@ const single = (revs = 1) => {
             pin2.writeSync(pinValues[1]);
             pin3.writeSync(pinValues[2]);
             pin4.writeSync(pinValues[3]);
-            delay(50);
+            delay(10);
         });
     }
 }
@@ -92,7 +92,7 @@ const half = (revs = 1) => {
 }
 
 console.log('Single Phase...');
-single(25);
+single(64);
 
 pin1.unexport();
 pin2.unexport();
