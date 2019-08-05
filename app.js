@@ -50,22 +50,23 @@ const halfStep = [
     [1, 0, 0, 1]
 ];
 
+//Delay Function
+const delay = (ms) => {
+    const startPoint = new Date().getTime()
+    while (new Date().getTime() - startPoint <= ms) {/* wait */}
+}
+
 //Functions to Drive the Stepper Motor
 const single = (revs = 1) => {
     for(i = 0; i < revs; i++) {
         singlePhase.forEach((pinValues) => {
-            Loop(pinValues);
-        });
-    }
-}
-
-var Loop = (pinValues) => {
-    setTimeout(() => {
-        pin1.writeSync(pinValues[0]);
+            pin1.writeSync(pinValues[0]);
             pin2.writeSync(pinValues[1]);
             pin3.writeSync(pinValues[2]);
             pin4.writeSync(pinValues[3]);
-    }, 1000);
+            delay(1000);
+        });
+    }
 }
 
 const full = (revs = 1) => {
