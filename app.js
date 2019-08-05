@@ -55,6 +55,15 @@ const timer = (ms) => {
     setTimeout(() => {}, ms);
 }
 
+function timeout(i, revs) {
+    setTimeout(function () {
+        if (i < revs) {
+            i++;
+            timeout(i, revs);
+        }
+    }, 1000);
+}
+
 //Functions to Drive the Stepper Motor
 const single = (revs = 1) => {
     for(i = 0; i < revs; i++) {
@@ -63,7 +72,8 @@ const single = (revs = 1) => {
             pin2.writeSync(pinValues[1]);
             pin3.writeSync(pinValues[2]);
             pin4.writeSync(pinValues[3]);
-            timer(1000);
+            i = 0;
+            timeout(i, revs);
         });
     }
 }
