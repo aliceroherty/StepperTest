@@ -50,6 +50,11 @@ const halfStep = [
     [1, 0, 0, 1]
 ];
 
+//Timer Function
+const timer = (ms) => {
+    setTimeout(() => {}, ms);
+}
+
 //Functions to Drive the Stepper Motor
 const single = (revs = 1) => {
     for(i = 0; i < revs; i++) {
@@ -58,10 +63,7 @@ const single = (revs = 1) => {
             pin2.writeSync(pinValues[1]);
             pin3.writeSync(pinValues[2]);
             pin4.writeSync(pinValues[3]);
-            setTimeout(() => {
-                console.log('waiting...')
-            }, 2500);           
-            clearTimeout();
+            timer(1000);
         });
     }
 }
