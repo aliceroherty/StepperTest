@@ -54,10 +54,10 @@ const halfStep = [
 const single = (revs = 1) => {
     for(i = 0; i < revs; i++) {
         singlePhase.forEach((pinValues) => {
-            pin1.write(pinValues[0]);
-            pin2.write(pinValues[1]);
-            pin3.write(pinValues[2]);
-            pin4.write(pinValues[3]);
+            pin1.writeSync(pinValues[0]);
+            pin2.writeSync(pinValues[1]);
+            pin3.writeSync(pinValues[2]);
+            pin4.writeSync(pinValues[3]);
             setTimeout(() => {
                 console.log('waiting...')
             }, 2500);           
@@ -90,6 +90,11 @@ const half = (revs = 1) => {
 
 console.log('Single Phase...');
 single(15);
+
+pin1.unexport();
+pin2.unexport();
+pin3.unexport();
+pin4.unexport();
 
 /*
 console.log('Full Stepping / Dual Phase...');
