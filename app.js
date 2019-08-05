@@ -28,6 +28,13 @@ const singlePhase = [
     [0, 0, 0, 1]
 ];
 
+const singlePhaseBackwards = [
+    [0, 0, 0, 1],
+    [0, 0, 1, 0],
+    [0, 1, 0, 0],
+    [1, 0, 0, 0]
+];
+
 
 //Full Stepping
 const dualPhase = [
@@ -69,6 +76,18 @@ const single = (revs = 1) => {
     }
 }
 
+const singleBackwards = (revs = 1) => {
+    for(i = 0; i < revs; i++) {
+        singlePhaseBackwards.forEach((pinValues) => {
+            pin1.writeSync(pinValues[0]);
+            pin2.writeSync(pinValues[1]);
+            pin3.writeSync(pinValues[2]);
+            pin4.writeSync(pinValues[3]);
+            delay(1);
+        });
+    }
+}
+
 const full = (revs = 1) => {
     for(i = 0; i < revs; i++) {
         dualPhase.forEach((pinValues) => {
@@ -96,6 +115,11 @@ const half = (revs = 1) => {
 //One Revolution Each
 console.log('Single Phase...');
 single(512);
+
+delay(1000);
+
+console.log('Single Phase Backwards...');
+singleBackwards(512);
 
 delay(1000);
 
