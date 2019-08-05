@@ -57,8 +57,8 @@ const single = (revs = 1) => {
             pin3.write(pinValues[2]);
             pin4.write(pinValues[3]);
             setTimeout(() => {
-                
-            }, 1000);           
+                console.log('waiting...')
+            }, 2500);           
         });
     }
 }
