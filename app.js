@@ -97,11 +97,17 @@ const half = (revs = 1) => {
 console.log('Single Phase...');
 single(512);
 
+delay(1000);
+
 console.log('Full Stepping / Dual Phase...');
 full(512);
 
+delay(1000);
+
 console.log('Half Stepping...');
-half(256);
+half(512);
+
+delay(1000);
 
 //Unexporting Pins
 pin1.unexport();
