@@ -92,7 +92,7 @@ const half = (revs = 1) => {
 }
 
 console.log('Single Phase...');
-single(2048);
+single(512);
 
 pin1.unexport();
 pin2.unexport();
